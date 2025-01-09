@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   connection: local
-  become: true
+  become: false
   gather_facts: false
   vars:
     env: dev
@@ -22,6 +22,9 @@
         - karabiner-elements
         - 1password
         - ansible
+        - iterm2
+        - alacritty
+        - ansible
     - name: Ensures packages are present via homebrew
       community.general.homebrew:
         name: "{{ item }}"
@@ -29,12 +32,40 @@
         state: present
       with_items:
         - openssl
+        - atuin
+        - chezmoi
         - 1password-cli
         - xz
         - zlib
         - wget
         - fzf
         - ansible-lint
+        - ranger
+        - bat
+        - btop
+        - readline
+        - ca-certificates
+        - eza
+        - lpeg
+        - fzf
+        - fd
+        - luajit
+        - stow
+        - gettext
+        - luv
+        - tlrc
+        - gh
+        - git
+        - tree
+        - tmux
+        - ncurses
+        - tree-sitter
+        - htop
+        - neovim
+        - unibilium
+        - lazygit
+        - zoxide
+        - zsh-syntax-highlighting
       ignore_errors: yes
       tags:
         - packages
