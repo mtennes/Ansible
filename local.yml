@@ -4,6 +4,6 @@
   become: true
 
   tasks:
-  - install packages
-      package:
+  - name: Install packages
+    brew:
         name: htop
