@@ -2,8 +2,7 @@
 - hosts: localhost
   connections: local
   become: true
-
   tasks:
-  - name: Install packages
-    brew:
-      name: htop
+    - name: Install packages
+      brew:
+        name: htop
